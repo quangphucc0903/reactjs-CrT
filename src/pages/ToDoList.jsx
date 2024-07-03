@@ -29,7 +29,7 @@ function ToDoList() {
                 <button onClick={handleSubmit}>Add</button>
 
                 <ul>
-                    {jobs.map((job, index) => (
+                    {jobs?.map((job, index) => (
                         <li key={index}> {job} </li>
                     ))}
                 </ul>
