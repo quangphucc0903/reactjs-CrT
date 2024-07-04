@@ -10,6 +10,7 @@ import HookEffect from "./pages/HookEffect";
 import Timeout from "./pages/Timeout";
 import PreviewAvatar from "./pages/PreviewAvatar";
 import 'antd/dist/reset.css';
+import './index.css';
 
 const { Header, Content } = Layout;
 
