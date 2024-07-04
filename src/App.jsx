@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import 'antd/dist/reset.css';
+import './index.css';
 import RandomGift from './pages/Randomgift';
 import BoxCheck from './pages/BoxCheck';
 import RadioCheck from './pages/RadioCheck';
@@ -9,8 +11,7 @@ import ToDoList from "./pages/ToDoList";
 import HookEffect from "./pages/HookEffect";
 import Timeout from "./pages/Timeout";
 import PreviewAvatar from "./pages/PreviewAvatar";
-import 'antd/dist/reset.css';
-import './index.css';
+import Test from "./pages/Test";
 
 const { Header, Content } = Layout;
 
@@ -26,9 +27,12 @@ function App() {
           <Menu.Item key="5"><Link to="/HookEffect">HookEffect</Link></Menu.Item>
           <Menu.Item key="6"><Link to="/Timeout">Timeout</Link></Menu.Item>
           <Menu.Item key="7"><Link to="/PreviewAvatar">PreviewAvatar</Link></Menu.Item>
+          <Menu.Item key="8"><Link to="/Test">Test</Link></Menu.Item>
         </Menu>
       </Header>
-      
+
+      <Test />
+
       <Content style={{ padding: '50px'}}>
         <Routes>
           <Route path="/" element={<Randomgift />} />
@@ -38,6 +42,7 @@ function App() {
           <Route path="/HookEffect" element={<HookEffect />} />
           <Route path="/Timeout" element={<Timeout />} />
           <Route path="/PreviewAvatar" element={<PreviewAvatar />} />
+          <Route path="/Test" element={<Test />} />
         </Routes>
       </Content>
     </Layout>

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './HookEffect.css';
+import 'antd/dist/reset.css';
+import '../index.css'
 
 // Callback luôn được gọi sau khi component mounted
 function HookEffect() {

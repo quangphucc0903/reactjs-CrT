@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import 'antd/dist/reset.css';
+import '../index.css'
 
 function Timeout() {
   const [countDown, setCountDown] = useState(3);
@@ -36,7 +38,7 @@ function Timeout() {
     <>
       <div className="App" style={{ padding: 20, textAlign: 'center' }}>
         {!time && <h1>{countDown}</h1>}
-        {time && <h1>happy new year</h1>}
+        {time && <h1 font-bold >happy new year</h1>}
       </div>
     </>
   );

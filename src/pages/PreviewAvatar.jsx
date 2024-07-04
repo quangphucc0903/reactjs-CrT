@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Upload } from 'antd';
+import 'antd/dist/reset.css';
+import '../index.css'
 
 function PreviewAvatar() {
     const [avatar, setAvatar] = useState();
