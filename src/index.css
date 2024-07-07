@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-switch .ant-switch-checked {
+    background-color: #CA5C3B !important;
+    border-color: #CA5C3B !important;
+}
+
+.custom-switch .ant-switch-unchecked {
+    background-color: #EEC5C7 !important;
+    border-color: #EEC5C7 !important;
+}

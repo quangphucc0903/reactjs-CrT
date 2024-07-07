@@ -28,7 +28,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
 
-function Test() {
+function Nav() {
     return (
         <>
             <Disclosure as="nav" className="bg-white">
@@ -123,4 +123,4 @@ function Test() {
     );
 }
 
-export default Test;
+export default Nav
