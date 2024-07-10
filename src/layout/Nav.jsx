@@ -1,6 +1,7 @@
 import 'antd/dist/reset.css';
 import { Disclosure } from '@headlessui/react'
 import { Menu as AntMenu, Dropdown, Space as AntdSpace, Switch as AntdSwitch } from 'antd';
+import "./Nav.less"
 
 const navigation = [
     { name: 'Tapos', href: '#', current: false },
@@ -113,6 +114,12 @@ function Nav() {
                                         unCheckedChildren="testnet"
                                         defaultChecked
                                         className='custom-switch'
+                                        style={{
+                                            '--antd-switch-checked-bg': '#CA5C3B',
+                                            '--antd-switch-checked-handle-bg': '#CA5C3B',
+                                            '--antd-switch-unchecked-bg': '#EEC5C7',
+                                            '--antd-switch-unchecked-handle-bg': '#EEC5C7',
+                                        }}
                                     />
                                 </AntdSpace>
                             </div>

@@ -12,7 +12,7 @@ import HookEffect from "./pages/HookEffect";
 import Timeout from "./pages/Timeout";
 import PreviewAvatar from "./pages/PreviewAvatar";
 import Test from "./pages/Test";
-import Nav from './components/Nav';
+import Nav from './layout/Nav';
 
 const { Header, Content } = Layout;
 
