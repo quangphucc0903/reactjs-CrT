@@ -1,0 +1,28 @@
+/* .no-hover:hover {
+    border: none !important;
+    transition: none !important;
+    color: inherit !important;
+} */
+.div-cover {
+    background-color: #EEC5C7 !important;
+    border-radius: 50px !important;
+    height: 30px !important;
+    margin: 0 auto !important;
+}
+.btn-main {
+    margin-top: 2px !important;
+    margin-left: 2px !important;
+    height: 25px !important;
+    border-radius: 50px !important;
+    padding-bottom: 5px !important;
+    border: none !important;
+    
+}
+.btn-test {
+    height: 25px !important;
+    border-radius: 50px !important;
+    border: none !important;
+    margin-top: 2px !important;
+    margin-right: 2px !important;
+    padding-bottom: 5px !important;
+}
