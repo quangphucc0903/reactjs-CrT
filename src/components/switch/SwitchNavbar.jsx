@@ -1,27 +1,25 @@
 import { useState } from "react"
 import { Button } from 'antd';
 import clsx from 'clsx'
-import './SwitchNavbar.css';
+// import './SwitchNavbar.css';
 
 export const SwitchNavbar = () => {
     const [action, setAction] = useState(true);
 
     return (
         <>
-            <div className="flex w-full max-w-4xl mx-auto mt-4 rounded-md border-gray-300 overflow-hidden div-cover">
+            <div className="flex w-full max-w-4xl mx-auto mt-4 overflow-hidden bg-secondaryColor rounded-2xl">
                 <Button
                     onClick={() => setAction(true)}
-                    className={clsx("flex-1 text-sm no-hover btn-main", { 'text-white': action, 'text-black': !action })}
-                    style={{ borderRadius: '8px 0 0 8px',
-                        backgroundColor:'#CA5C3B',                        
-                    }}
+                    className={clsx("flex-1 border-none text-sm hover:!bg-customColor pb-1 h-6 my-1 ml-1 rounded-2xl",
+                        action ? 'text-white bg-customColor' : 'text-dark bg-transparent')}
                 >
                     Mainnet
                 </Button>
                 <Button
                     onClick={() => setAction(false)}
-                    className={clsx("flex-1 text-sm no-hover btn-test", { 'text-white': !action, 'text-black': action })}
-                    style={{ borderRadius: '0 8px 8px 0', backgroundColor:'#EEC5C7' }}
+                    className={clsx("border-none flex-1 hover:!bg-customColor text-sm pb-1 h-6 my-1 mx-1 rounded-2xl",
+                        action ? 'text-dark bg-transparent' : 'text-white !bg-customColor')}                    
                 >
                     Testnet
                 </Button>

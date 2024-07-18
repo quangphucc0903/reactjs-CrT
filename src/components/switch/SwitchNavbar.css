@@ -3,7 +3,7 @@
     transition: none !important;
     color: inherit !important;
 } */
-.div-cover {
+/* .div-cover {
     background-color: #EEC5C7 !important;
     border-radius: 50px !important;
     height: 30px !important;
@@ -25,4 +25,11 @@
     margin-top: 2px !important;
     margin-right: 2px !important;
     padding-bottom: 5px !important;
+} */
+
+.ant-btn:hover {
+    background-color: initial !important;
+    border-color: initial !important;
+    color: initial !important;
+    box-shadow: none !important;
 }
