@@ -7,7 +7,6 @@ module.exports = {
           colors: {
               customColor: '#CA5C3B',
               secondaryColor: '#EEC5C7',
-              hoverColor: '#EEC5C7',
           },
       },
   },
