@@ -13,7 +13,6 @@ import Timeout from "./pages/Timeout";
 import PreviewAvatar from "./pages/PreviewAvatar";
 import Test from "./pages/Test";
 import {Nav} from './layout/Nav';
-// import {SwitchNavbar} from "./components/switch"
 
 const { Header, Content } = Layout;
 
