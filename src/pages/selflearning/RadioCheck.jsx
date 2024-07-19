@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import 'antd/dist/reset.css';
 
 const courses = [
   {
@@ -18,7 +19,7 @@ const courses = [
     name: 'nextjs',
   },
 ]
-function RadioCheck() {
+export const RadioCheck = () => {
   
   const [checked, setChecked] = useState(1)
   const handleSubmit = () => {
@@ -42,5 +43,3 @@ function RadioCheck() {
     </>
   );
 }
-
-export default RadioCheck

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import 'antd/dist/reset.css';
 
 const course = [
   {
@@ -22,7 +23,7 @@ const course = [
     name: 'php',
   },
 ]
-function BoxCheck() {
+export const BoxCheck = () => {
   const [checked, setChecked] = useState([])
 
   const handleCheck = (id) => {
@@ -62,5 +63,3 @@ function BoxCheck() {
     </>
   )
 }
-
-export default BoxCheck

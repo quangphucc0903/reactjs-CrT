@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './HookEffect.css';
+import 'antd/dist/reset.css';
 
 // Callback luôn được gọi sau khi component mounted
-function HookEffect() {
+export const HookEffect = () => {
     const [title, setTitle] = useState('');
     const [posts, setPosts] = useState([]);
     const [showGoToTop, setGoToTop] = useState(false)
@@ -58,5 +59,3 @@ function HookEffect() {
         </>
     );
 }
-
-export default HookEffect;
