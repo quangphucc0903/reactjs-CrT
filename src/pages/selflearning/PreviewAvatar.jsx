@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Upload } from 'antd';
 import 'antd/dist/reset.css';
-import '../index.css'
 
-function PreviewAvatar() {
+export const PreviewAvatar = () => {
     const [avatar, setAvatar] = useState();
 
     useEffect(() => {
@@ -43,5 +42,3 @@ function PreviewAvatar() {
         </div>
     );
 }
-
-export default PreviewAvatar;

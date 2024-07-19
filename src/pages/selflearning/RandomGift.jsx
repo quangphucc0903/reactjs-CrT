@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import 'antd/dist/reset.css';
-import '../index.css'
 
 const gifts = [
   'CPU i9',
@@ -8,10 +7,10 @@ const gifts = [
   'keyboard',
   'xe sh 160i',
 ]
-function Randomgift() {
+export const RandomGift = () => {
   const [gift, setGift] = useState()
 
-  const randomGift = () => {
+  const randomGifts = () => {
     const index = Math.floor(Math.random() * gifts.length)
     setGift(gifts[index])
   }
@@ -19,11 +18,9 @@ function Randomgift() {
     <>
       <div className="App" style={{ padding: 20, textAlign: 'center' }}>
         <h1>{gift || 'Chua co phan thuong'}</h1>
-        <button onClick={randomGift}>Lay thuong</button>
+        <button onClick={randomGifts}>Lay thuong</button>
       </div>
 
     </>
   )
 }
-
-export default Randomgift

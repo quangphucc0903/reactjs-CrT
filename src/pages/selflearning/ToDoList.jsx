@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import 'antd/dist/reset.css';
-import '../index.css'
 
-function ToDoList() {
+export const ToDoList = () => {
     const [job, setJob] = useState('')
     // const [jobs, setJobs] = useState([] ?? storeageJobs)
     const [jobs, setJobs] = useState(() => {
@@ -40,5 +39,3 @@ function ToDoList() {
         </>
     )
 }
-
-export default ToDoList

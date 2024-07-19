@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
 import 'antd/dist/reset.css';
-import '../index.css'
 
-function Timeout() {
+export const Timeout = () => {
   const [countDown, setCountDown] = useState(3);
   const [time, setTime] = useState(false);
 
   useEffect(() => {
-//     const timerId = setInterval(() => {
-//         setCountDown(countDown - 1);
-//         if (countDown === 0) {
-//             setTime(true)
-//         }
-//     }, 1000)
-//     return () => {
-//         clearInterval(timerId)
-//     }
-// }, [countDown])
-
     const timerId = setInterval(() => {
       setCountDown(prevCount => {
         if (prevCount === 1) {
@@ -43,5 +31,3 @@ function Timeout() {
     </>
   );
 }
-
-export default Timeout;
