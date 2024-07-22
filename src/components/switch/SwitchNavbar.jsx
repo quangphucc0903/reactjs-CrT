@@ -1,27 +1,26 @@
 import { useState } from "react"
-import { Button } from 'antd';
 import clsx from 'clsx'
 
-export const SwitchNavbar = () => {
+export const SwitchNavbar = ({className}) => {
     const [action, setAction] = useState(true);
 
     return (
         <>
-            <div className="flex w-full max-w-4xl mx-auto mt-4 overflow-hidden bg-secondaryColor rounded-2xl">
-                <Button
+            <div className={`flex w-full max-w-4xl mx-auto mt-4 overflow-hidden bg-secondaryColor rounded-[100px] ${className}`} >
+                <button
                     onClick={() => setAction(true)}
-                    className={clsx("flex-1 border-none text-sm hover:!bg-customColor hover:!text-white pb-1 h-6 my-1 ml-1 rounded-2xl",
-                        action ? 'text-white bg-customColor' : 'text-dark bg-transparent')}
+                    className={clsx("flex-1 font-[Roboto] text-base w-[76px] h-[30px]  ml-[1px] rounded-[100px] flex items-center justify-center",
+                        action ? 'text-white bg-customColor' : 'text-dark bg-transparent hover:!bg-customColor hover:!text-white')}
                 >
                     Mainnet
-                </Button>
-                <Button
+                </button>
+                <button
                     onClick={() => setAction(false)}
-                    className={clsx("border-none hover:!text-white flex-1 hover:!bg-customColor text-sm pb-1 h-6 my-1 mx-1 rounded-2xl",
-                        action ? 'text-dark bg-transparent' : 'text-white !bg-customColor')}                    
+                    className={clsx("font-[Roboto] flex-1 w-[76px] h-[30px] text-base ml-[4px] rounded-[100px] flex items-center justify-center",
+                        action ? 'text-dark bg-transparent hover:!bg-customColor hover:!text-white' : 'text-white !bg-customColor')}
                 >
                     Testnet
-                </Button>
+                </button>
             </div>
         </>
     )
