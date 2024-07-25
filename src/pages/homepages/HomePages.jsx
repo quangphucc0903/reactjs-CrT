@@ -5,26 +5,9 @@ import { FollowCard } from "@/components/card/FollowCard"
 import { ConnectCard } from "./components/card/ConnectCard"
 import discord from "@/assets/discord.svg"
 import twitter from "@/assets/twitter.svg"
-import { useDispatch, useSelector } from "react-redux";
-import { clickButton1 } from "@/redux/slice/modalSlice";
 import { TransferButton } from "@/components/buttons/TransferButton";
 
 export const HomePages = () => {
-
-    const dispatch = useDispatch();
-    const buttonState = useSelector((state) => { return state.button || {} });
-
-    const {
-        button1,
-        button2,
-        button1Text,
-        button1Change,
-        button2Change,
-    } = buttonState;
-
-    const handleClickButton1 = () => {
-        dispatch(clickButton1());
-    };
 
     return (
         <>
@@ -38,12 +21,7 @@ export const HomePages = () => {
                 <p className="text-center mt-2">Complete the Social Tasks to earn extra $Heart token</p>
 
                 {/* card */}
-                <ConnectCard
-                    button1Text={button1Text}
-                    button1Change={button1Change}
-                    isDisabled={{ button1, button2 }}
-                    onClickButton1={handleClickButton1}
-                />
+                <ConnectCard />
 
                 {/* button prev and next */}
                 <div className="flex justify-end mt-4 space-x-2 w-[70%]">
@@ -53,15 +31,15 @@ export const HomePages = () => {
 
                 {/* follow card*/}
                 <div className="mt-4 w-[1008px] h-[196px] flex justify-between">
-                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Follow Tapos X'} img={twitter} className={"bg-black p-2"} text={'Follow Tapos X to earn Points'} />
+                    <FollowCard textHeader={'Follow Tapos X'} img={twitter} className={"bg-black p-2"} text={'Follow Tapos X to earn Points'} />
 
-                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Retweet post on X'} img={twitter} className={"bg-black p-2"} text={'Retweet Tapos post on X to earn Points'} />
+                    <FollowCard textHeader={'Retweet post on X'} img={twitter} className={"bg-black p-2"} text={'Retweet Tapos post on X to earn Points'} />
 
-                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Join VibrantX Discord'} img={discord} className={'w-[50px] h-[50px]'} text={'Retweet a daily tweet to earn HEART'} />
+                    <FollowCard textHeader={'Join VibrantX Discord'} img={discord} className={'w-[50px] h-[50px]'} text={'Retweet a daily tweet to earn HEART'} />
 
                 </div>
 
-                
+
             </div>
         </>
     )

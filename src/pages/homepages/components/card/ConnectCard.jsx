@@ -1,7 +1,7 @@
 import chevRight from "@/assets/chevron-right.svg"
 import { AppButton } from "@/components/buttons/AppButton"
 
-export const ConnectCard = ({button1Text, button1Change, isDisabled, onClickButton1}) => {
+export const ConnectCard = ({button1Text, button1Change}) => {
 
     return (
         <>
@@ -16,10 +16,8 @@ export const ConnectCard = ({button1Text, button1Change, isDisabled, onClickButt
 
                     <AppButton
                         className={`${button1Change} text-white w-[235px] h-[40px] !rounded-[100px] mt-4`}
-                        onClick={onClickButton1}
-                        disabled={isDisabled.button1}
                     >
-                        {button1Text}
+                        Connect your X account
                     </AppButton>
                 </div>
             </div>

@@ -3,20 +3,8 @@ import cat from "@/assets/cat.svg"
 import ball from "@/assets/ball.svg"
 import fish from "@/assets/fish.svg"
 import { AppButton } from "@/components/buttons/AppButton"
-import { ModalTest } from "@/components/modal/Modal"
-import { openModal } from "@/redux/slice/modalSlice"
-import { useDispatch, useSelector } from "react-redux"
 
-export const FollowCard = ({ textHeader, text, img, className, isDisabled, onButtonClick, button2Change  }) => {
-    const dispatch = useDispatch();
-    const modalVisible = useSelector((state) => state.button.modalVisible);
-
-    const handleButtonClick = () => {
-        if (!isDisabled.button2) {
-            dispatch(openModal());
-        }
-    };
-
+export const FollowCard = ({ textHeader, text, img, className  }) => {
     return (
         <>
             <div className="overflow-hidden relative bg-white p-1 rounded-[30px] w-[320px] h-[276px] border-[2px] border-secondary">
@@ -42,10 +30,7 @@ export const FollowCard = ({ textHeader, text, img, className, isDisabled, onBut
                     </button>
 
                     <AppButton
-                        disabled={isDisabled.button2}
-                        onClick={handleButtonClick}
-                        className={`${button2Change} !rounded-[100px] py-2 px-8 w-[170px] !ml-[16px] !mr-[31px]`} >Follow </AppButton>
-                    {modalVisible && <ModalTest />}
+                        className={`!rounded-[100px] py-2 px-8 w-[170px] !ml-[16px] !mr-[31px] bg-white border-primary text-primary`} >Follow </AppButton>
                 </div>
             </div>
         </>
