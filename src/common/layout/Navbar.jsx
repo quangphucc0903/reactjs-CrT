@@ -6,7 +6,7 @@ import { Menu as AntMenu, Dropdown} from 'antd';
 import {SwitchNavbar} from '../../components/switch'
 
 const navigation = [
-    { name: 'Tapos', href: '#', current: false },
+    { name: 'Tapos', href: '#', current: true },
     { name: 'Wallet', href: '#', current: false },
     { name: 'Leaderboard', href: '#', current: false },
     { name: 'Shop', href: '#', current: false },
@@ -33,7 +33,7 @@ function classNames(...classes) {
 export const Navbar = () => {
     return (
         <>
-            <Disclosure as="nav" className="bg-white">
+            <Disclosure as="nav" className="bg-white px-[110px] py-[29px] font-roboto">
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="flex items-center justify-start">
@@ -43,16 +43,15 @@ export const Navbar = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-1 items-center justify-center sm:items-stretch">
+                        <div className="flex flex-1 items-center justify-center sm:items-stretch ml-28">
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
-                                    {navigation.map((item) =>
+                                <div className="flex space-x-5">
+                                    {navigation?.map((item) =>
                                         item.name === 'More' ? (
                                             <Dropdown key={item.name} overlay={moreMenu} trigger={['click']}>
                                                 <a
                                                     href={item.href}
-                                                    className="text-gray-300 rounded-md px-3 py-2 text-sm font-medium flex items-center"
-                                                    style={{ color: '#CA5C3B' }}
+                                                    className="!font-semibold rounded-md px-3 text-sm flex items-center text-primary"                                                    
                                                 >
                                                     {item.name}
                                                     {/* icon showmore */}
@@ -65,9 +64,9 @@ export const Navbar = () => {
                                                 href={item.href}
                                                 className={classNames(
                                                     item.current
-                                                        ? 'text-white'
-                                                        : 'text-black',
-                                                    'rounded-md px-3 py-2 text-sm font-medium'
+                                                        ? 'text-[#6B6B6B]'
+                                                        : 'text-[#8C8C8C]',
+                                                    'rounded-md px-3 py-2 text-sm font-semibold'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
@@ -78,8 +77,8 @@ export const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">                           
-                           <SwitchNavbar />
+                        <div className="absolute flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">                           
+                           <SwitchNavbar className="!mb-5" />
                         </div>
                     </div>
                 </div>
