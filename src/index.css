@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply bg-custom-gradient;
+.bg-home {
+    background: linear-gradient(180deg, #FFF 0%, #EADBD7 100%);
 }

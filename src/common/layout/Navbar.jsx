@@ -51,8 +51,7 @@ export const Navbar = () => {
                                             <Dropdown key={item.name} overlay={moreMenu} trigger={['click']}>
                                                 <a
                                                     href={item.href}
-                                                    className="text-gray-300 !font-semibold rounded-md px-3 text-sm flex items-center"
-                                                    style={{ color: '#CA5C3B' }}
+                                                    className="!font-semibold rounded-md px-3 text-sm flex items-center text-primary"                                                    
                                                 >
                                                     {item.name}
                                                     {/* icon showmore */}

@@ -1,29 +1,30 @@
-import { ButtonFl } from "@/components/buttons/ButtonFl"
 import footdog from "@/assets/footdog.svg"
 import chevRightV2 from "@/assets/chevron-rightv2.svg"
 import chevLeft from "@/assets/chevron-left.svg"
-import heart from "@/assets/heart.svg"
-import twitter from "@/assets/twitter.svg"
-import discord from "@/assets/discord.svg"
-import cat from "@/assets/cat.svg"
-import ball from "@/assets/ball.svg"
-import fish from "@/assets/fish.svg"
-import { useEffect, useState } from "react";
+import { FollowCard } from "@/components/card/FollowCard"
 import { ConnectCard } from "./components/card/ConnectCard"
-
+import discord from "@/assets/discord.svg"
+import twitter from "@/assets/twitter.svg"
+import { useDispatch, useSelector } from "react-redux";
+import { clickButton1 } from "@/redux/slice/modalSlice";
+import { TransferButton } from "@/components/buttons/TransferButton";
 
 export const HomePages = () => {
 
+    const dispatch = useDispatch();
+    const buttonState = useSelector((state) => { return state.button || {} });
 
+    const {
+        button1,
+        button2,
+        button1Text,
+        button1Change,
+        button2Change,
+    } = buttonState;
 
-    useEffect(() => {
-        document.body.style.position = 'relative';
-
-        // xóa bỏ sự kiện position
-        return () => {
-            document.body.style.position = '';
-        };
-    }, []);
+    const handleClickButton1 = () => {
+        dispatch(clickButton1());
+    };
 
     return (
         <>
@@ -37,9 +38,30 @@ export const HomePages = () => {
                 <p className="text-center mt-2">Complete the Social Tasks to earn extra $Heart token</p>
 
                 {/* card */}
-                <ConnectCard />
+                <ConnectCard
+                    button1Text={button1Text}
+                    button1Change={button1Change}
+                    isDisabled={{ button1, button2 }}
+                    onClickButton1={handleClickButton1}
+                />
 
+                {/* button prev and next */}
+                <div className="flex justify-end mt-4 space-x-2 w-[70%]">
+                    <TransferButton img={chevLeft} />
+                    <TransferButton img={chevRightV2} />
+                </div>
 
+                {/* follow card*/}
+                <div className="mt-4 w-[1008px] h-[196px] flex justify-between">
+                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Follow Tapos X'} img={twitter} className={"bg-black p-2"} text={'Follow Tapos X to earn Points'} />
+
+                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Retweet post on X'} img={twitter} className={"bg-black p-2"} text={'Retweet Tapos post on X to earn Points'} />
+
+                    <FollowCard isDisabled={{ button2 }} button2Change={button2Change} textHeader={'Join VibrantX Discord'} img={discord} className={'w-[50px] h-[50px]'} text={'Retweet a daily tweet to earn HEART'} />
+
+                </div>
+
+                
             </div>
         </>
     )
