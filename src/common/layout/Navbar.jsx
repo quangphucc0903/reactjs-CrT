@@ -13,19 +13,20 @@ const navigation = [
     { name: 'More', href: '#', current: false },
 ];
 
-const moreMenu = (
-    <AntMenu>
-        <AntMenu.Item key="1">
-            <a href="#subitem1">Subitem 1</a>
-        </AntMenu.Item>
-        <AntMenu.Item key="2">
-            <a href="#subitem2">Subitem 2</a>
-        </AntMenu.Item>
-        <AntMenu.Item key="3">
-            <a href="#subitem3">Subitem 3</a>
-        </AntMenu.Item>
-    </AntMenu>
-);
+const moreMenu = [
+    {
+      key: '1',
+      label: <a href="/link1">Link 1</a>,
+    },
+    {
+      key: '2',
+      label: <a href="/link2">Link 2</a>,
+    },
+    {
+      key: '3',
+      label: <a href="/link3">Link 3</a>,
+    },
+  ];
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
@@ -43,12 +44,12 @@ export const Navbar = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-1 items-center justify-center sm:items-stretch ml-28">
+                        <div className="flex flex-1 items-center justify-center sm:items-stretch !max-w-[1200px]">
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-5">
+                                <div className="flex space-x-5 transform translate-x-10">
                                     {navigation?.map((item) =>
                                         item.name === 'More' ? (
-                                            <Dropdown key={item.name} overlay={moreMenu} trigger={['click']}>
+                                            <Dropdown key={item.name} menu={{items:moreMenu}} trigger={['click']}>
                                                 <a
                                                     href={item.href}
                                                     className="!font-semibold rounded-md px-3 text-sm flex items-center text-primary"                                                    

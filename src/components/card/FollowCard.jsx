@@ -4,7 +4,7 @@ import ball from "@/assets/ball.svg"
 import fish from "@/assets/fish.svg"
 import { AppButton } from "@/components/buttons/AppButton"
 
-export const FollowCard = ({ textHeader, text, img, className  }) => {
+export const FollowCard = ({ textHeader, text, img, className }) => {
     return (
         <>
             <div className="overflow-hidden relative bg-white p-1 rounded-[30px] w-[320px] h-[276px] border-[2px] border-secondary">
