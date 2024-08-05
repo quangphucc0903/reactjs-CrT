@@ -9,8 +9,8 @@ export const HomeAPI = {
         const response = await request.post('/user/createUser', data)
         return response.data
     },
-    getLoginUser: async (address) => {
-        const response = await request.get(`/user?address=address${address}`)
+    getUser: async (address) => {
+        const response = await request.get(`/user?address=${address}`)
         return response.data
     }
 }

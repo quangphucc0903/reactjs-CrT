@@ -4,6 +4,7 @@ import { SlideShow } from "@/components/slicks/SlideShow";
 import { useRef } from "react";
 import { NextButton, PrevButton } from "@/components/buttons/SliderButton";
 import { ReferralCard } from "./components/card/ReferralCard";
+import { InviteTable } from "@/components/table/InviteTable";
 
 export const HomePages = () => {
     const sliderRef = useRef(null);
@@ -57,6 +58,9 @@ export const HomePages = () => {
                     </div>
                     <ReferralCard className="mt-[60px]" />
                 </div>
+
+                <InviteTable />
+                
             </div>
         </>
     )
