@@ -6,7 +6,7 @@ export const InviteTable = () => {
 
     const getAllData = async () => {
         try {
-            const rq = await HomeAPI.getUser();
+            const rq = await HomeAPI.getAddressUser();
             if (Array.isArray(rq)) {
                 setData(rq);
             } else {
@@ -42,8 +42,7 @@ export const InviteTable = () => {
                 <div className="overflow-x-auto rounded-lg border border-secondary">
                     <table className="min-w-full divide-y divide-secondary bg-white shadow-lg rounded-lg">
                         <thead className="bg-white">
-                            <tr>
-                                
+                            <tr>                                
                                 <th className="w-[10%] py-3 px-6  text-[12px] font-medium text-gray-600 uppercase "></th>
                                 <th className="w-[80%] py-3 px-6  text-[12px] font-medium text-gray-600 uppercase">Wallet Address</th>
                                 <th className="w-[10%] py-3 px-6  text-[12px] font-medium text-gray-600 uppercase ">HEART</th>
@@ -54,7 +53,7 @@ export const InviteTable = () => {
                             {paginatedData.length > 0 && paginatedData?.map((e, index) => (
                                 <tr key={index} className='text-gray-900'>
                                     <td className="px-6 py-4 text-center">{(currentPage - 1) * pageSize + index + 1}</td>
-                                    <td className="px-6 py-4 text-center">{e.address}</td>
+                                    <td className="px-6 py-4 text-center">{e.address.city}</td>
                                     <td className="px-6 py-4 text-center text-gray-600">9,153,233</td>
                                 </tr>
                             ))}
@@ -72,7 +71,7 @@ export const InviteTable = () => {
                                             <button
                                                 onClick={() => handlePageChange(currentPage - 1)}
                                                 disabled={currentPage === 1}
-                                                className="px-4 py-2 font-semibold bg-white text-[14px] border border-secondary text-gray-700 rounded-lg disabled:cursor-not-allowed"
+                                                className="px-4 py-2 font-semibold bg-white text-[14px] border border-secondary text-gray-700 rounded-lg disabled:cursor-not-allowed disabled:opacity-50"
                                             >
                                                 Previous
                                             </button>
@@ -80,7 +79,7 @@ export const InviteTable = () => {
                                             <button
                                                 onClick={() => handlePageChange(currentPage + 1)}
                                                 disabled={currentPage >= totalPages}
-                                                className="px-4 py-2 font-semibold bg-white text-[14px] border border-secondary text-gray-700 rounded-lg disabled:cursor-not-allowed"
+                                                className="px-4 py-2 font-semibold bg-white text-[14px] border border-secondary text-gray-700 rounded-lg disabled:cursor-not-allowed disabled:opacity-50"
                                             >
                                                 Next
                                             </button>
