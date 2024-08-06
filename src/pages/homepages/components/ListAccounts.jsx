@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { HomeAPI } from "@/servieces/ex"
+import { HomeAPI } from "@/services/ex"
 
 export const ListAccounts = () => {
     const [data, setData] = useState([])
