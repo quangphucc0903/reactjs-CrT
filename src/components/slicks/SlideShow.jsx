@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { FollowCard } from "@/components/card/FollowCard";
 import discord from "@/assets/discord.svg";
 import twitter from "@/assets/twitter.svg";
+import telegram from "@/assets/telegram.svg";
 
 export const SlideShow = forwardRef((props, ref) => {
     const settings = {
@@ -22,18 +23,21 @@ export const SlideShow = forwardRef((props, ref) => {
             className: "bg-black p-2",
             textHeader: "Follow Tapos X",
             text: "Follow Tapos X to earn Points",
+            typeSocial:"twitter",
         },
         {
-            img: twitter,
+            img: telegram,
             className: "bg-black p-2",
             textHeader: "Retweet post on X",
             text: "Retweet Tapos post on X to earn Points",
+            typeSocial:"telegram",
         },
         {
             img: discord,
             className: "w-[50px] h-[50px]",
             textHeader: "Join VibrantX Discord",
             text: "Retweet a daily tweet to earn HEART",
+            typeSocial:"discord",
         },
     ];
 
@@ -43,10 +47,12 @@ export const SlideShow = forwardRef((props, ref) => {
                 {slides?.map((slide, index) => (
                     <div key={index} className="!flex !justify-between !items-center">
                         <FollowCard
+                            address="phuc"
                             textHeader={slide.textHeader}
                             text={slide.text}
                             img={slide.img}
                             className={slide.className}
+                            typeSocial={slide.typeSocial}
                         />
                     </div>
                 ))}
