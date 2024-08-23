@@ -1,14 +1,20 @@
 import footdog from "@/assets/footdog.svg";
 import { ConnectCard } from "./components/card/ConnectCard";
 import { SlideShow } from "@/components/slicks/SlideShow";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { NextButton, PrevButton } from "@/components/buttons/SliderButton";
 import { ReferralCard } from "./components/card/ReferralCard";
 import { InviteTable } from "@/components/table/InviteTable";
+import { useDispatch } from "react-redux";
+import { getTaskUser } from "@/redux/slice/modalSlice";
 
 export const HomePages = () => {
     const sliderRef = useRef(null);
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getTaskUser({ address: "phuc" }));
+      }, []);
+      
     const handlePrevClick = () => {
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
